@@ -12,16 +12,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-
 import java.time.LocalDate;
-
-
 import static java.util.stream.Collectors.toList;
 
 @Service
 public class AuthorServiceImpl implements AuthorService {
-
     private final AuthorMapper authorMapper;
     private final AuthorRepository authorRepository;
 
@@ -37,7 +32,6 @@ public class AuthorServiceImpl implements AuthorService {
 
         return authorMapper.toDTO(authorSave);
     }
-
     @Override
     public AuthorDTO updateAuthor(Long id, AuthorDTO authorDTO) throws ResourceNotFoundException {
         AuthorEntity authorEntity = authorRepository.findById(id).orElseThrow(
@@ -45,10 +39,8 @@ public class AuthorServiceImpl implements AuthorService {
         );
         AuthorEntity authorSet = authorMapper.toSetEntity(authorEntity, authorDTO);
         AuthorEntity authorSave = authorRepository.save(authorSet);
-
         return authorMapper.toDTO(authorSave);
     }
-
     @Override
     public void deleteAuthor(Long id) throws ResourceNotFoundException {
         authorRepository.findById(id).orElseThrow(
@@ -56,7 +48,6 @@ public class AuthorServiceImpl implements AuthorService {
         );
         authorRepository.deleteById(id);
     }
-
     @Override
     public PageResponse<AuthorDTO> findByPage(int page) {
         Pageable pageable = PageRequest.of(page, 5);
@@ -64,13 +55,10 @@ public class AuthorServiceImpl implements AuthorService {
         if(page >= pageResultAuthorEntity.getTotalPages()){
             throw new IllegalArgumentException("Incorrect index");
         }
-
         String nextPage = pageResultAuthorEntity.isLast() ? "" : "/author?page=" + (page + 1);
         String previousPage = pageResultAuthorEntity.isFirst() ? "" : "/author?page=" + (page - 1);
-
         return pageAuthor(pageResultAuthorEntity, page, nextPage, previousPage);
     }
-
     @Override
     public PageResponse<AuthorDTO> findByCreatedAtIsAfter(String date, int page) {
         Pageable pageable = PageRequest.of(page, 5);
@@ -79,13 +67,11 @@ public class AuthorServiceImpl implements AuthorService {
         if(page >= pageResultAuthorEntity.getTotalPages()){
             throw new IllegalArgumentException("Incorrect index");
         }
-
         String nextPage = pageResultAuthorEntity.isLast() ? "" : "/author/date?page=" + (page + 1) + "&date=" + date;
         String previousPage = pageResultAuthorEntity.isFirst() ? "" : "/author/date?page=" + (page - 1) + "&date=" + date;
 
         return pageAuthor(pageResultAuthorEntity, page, nextPage, previousPage );
     }
-
     @Override
     public PageResponse<AuthorDTO> findByFullnameContaining(String word, int page) {
         Pageable pageable = PageRequest.of(page, 5);
@@ -94,15 +80,11 @@ public class AuthorServiceImpl implements AuthorService {
         if(page >= pageResultAuthorEntity.getTotalPages()){
             throw  new IllegalArgumentException("Incorrect index");
         }
-
         String nextPage = pageResultAuthorEntity.isLast() ? "" : "/author/word?page=" + (page + 1) + "&word=" + word;
         String previousPage = pageResultAuthorEntity.isFirst() ? "" : "/author/word?page=" + (page - 1) + "&word=" + word;
-
         return pageAuthor(pageResultAuthorEntity, page, nextPage, previousPage );
     }
-
     public PageResponse<AuthorDTO> pageAuthor(Page<AuthorEntity> pageResultAuthorEntity, int page, String nextPage, String previousPage){
-
         PageResponse response = PageResponse.builder()
                 .content(pageResultAuthorEntity
                         .getContent()

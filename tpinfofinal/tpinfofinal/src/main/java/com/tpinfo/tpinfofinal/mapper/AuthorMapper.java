@@ -3,14 +3,10 @@ package com.tpinfo.tpinfofinal.mapper;
 import com.tpinfo.tpinfofinal.dto.AuthorDTO;
 import com.tpinfo.tpinfofinal.entities.AuthorEntity;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
-
 import static java.util.stream.Collectors.toList;
-
 @Component
 public class AuthorMapper {
-
     public AuthorEntity toEntity(AuthorDTO authorDTO) {
         return AuthorEntity.builder()
                 .firstName(authorDTO.getFirstName())

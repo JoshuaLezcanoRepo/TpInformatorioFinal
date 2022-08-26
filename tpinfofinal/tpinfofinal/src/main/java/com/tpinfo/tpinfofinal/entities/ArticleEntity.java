@@ -6,11 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
-
 @Entity
 @Data @Builder
 @AllArgsConstructor

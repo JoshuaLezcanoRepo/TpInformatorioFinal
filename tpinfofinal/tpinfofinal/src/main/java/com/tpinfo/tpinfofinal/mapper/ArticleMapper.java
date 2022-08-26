@@ -8,15 +8,11 @@ import com.tpinfo.tpinfofinal.entities.AuthorEntity;
 import com.tpinfo.tpinfofinal.entities.SourceEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.time.LocalDate;
 import java.util.List;
-
 import static java.util.stream.Collectors.toList;
-
 @Component
 public class ArticleMapper {
-
     private final SourceMapper sourceMapper;
     private final AuthorMapper authorMapper;
 

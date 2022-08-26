@@ -7,11 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
-
 @RestController
 @RequestMapping("/source")
+
 public class SourceController {
     @Autowired
     private SourceService sourceService;
@@ -32,7 +31,6 @@ public class SourceController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //pagination
     @GetMapping
     public ResponseEntity<?> findByPage(@RequestParam int page){
         return new ResponseEntity<>(sourceService.findByPage(page), HttpStatus.OK);

@@ -1,0 +1,562 @@
+{
+	"info": {
+		"_postman_id": "46daac61-1beb-4c9b-bb1c-4d0942ffd817",
+		"name": "Noticias - TP Final Informatorio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22951641"
+	},
+	"item": [
+		{
+			"name": "Fuente",
+			"item": [
+				{
+					"name": "Crear Fuente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Todo Noticias\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/source",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"source"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fuentes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Todo Noticias\",\r\n    \"code\": \"TN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/source?page=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"source"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Búsqueda Fuentes por palabras",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Todo Noticias\",\r\n    \"code\": \"TN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/source/word?page=0&word=no",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"source",
+								"word"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "word",
+									"value": "no"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Fuente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Todo Noticias\",\r\n    \"code\": \"TN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/source/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"source",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Fuente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Todo Noticias\",\r\n    \"code\": \"TN\",\r\n    \"createdAt\": \"2022-08-26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/source/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"source",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autor",
+			"item": [
+				{
+					"name": "Crear Autor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Nelson\",\r\n    \"lastName\": \"Castro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nelson Castro\",\r\n    \"code\": \"NC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/author?page=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Búsqueda de Autores por Fecha de Creación",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nelson Castro\",\r\n    \"code\": \"NC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/author/date?page=0&date=2022-08-05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author",
+								"date"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "date",
+									"value": "2022-08-05"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Búsqueda de Autores por palabras",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nelson Castro\",\r\n    \"code\": \"NC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/author/word?page=0&word=tro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author",
+								"word"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "word",
+									"value": "tro"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Autor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Nelsone\",\r\n    \"lastName\": \"Castro\",\r\n    \"fullname\": \"Nelsone Castro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/author/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Autor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Nelson\",\r\n    \"lastName\": \"Castro\",\r\n    \"fullname\": \"Nelson Castro\",\r\n    \"createdAt\": \"2022-08-26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/author/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artículo",
+			"item": [
+				{
+					"name": "Crear Artículo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Leandro Paredes, a una firma de la Juventus: el mediocampista empieza a despedirse del PSG\",\r\n    \"description\": \"Medios europeos aseguran que ambos clubes llegaron a un acuerdo. La operación quedaría confirmada en las próximas horas.\",\r\n    \"url\": \"https://tn.com.ar/deportes/futbol/2022/08/25/leandro-paredes-a-una-firma-de-la-juventus-el-mediocampista-empieza-a-despedirse-del-psg/\",\r\n    \"urlToImage\": \"https://tn.com.ar/resizer/V0pshvFo9cCOHsbWHv5z-BR3GVk=/1440x0/smart/cloudfront-us-east-1.images.arcpublishing.com/artear/JJYW2SLGCZDMVP55FCRVEYK2NY.jpg\",\r\n    \"publishedAt\": \"2022-08-25\",\r\n    \"content\": \"Todo indica que en las próximas horas el mediocampista argentino Leandro Paredes dejará el PSG y se reencontrará con su compatriota Ángel Di María en la Juventus de Italia, club al que arribará a préstamo con obligación de compra.\",\r\n    \"source\": {\r\n        \"id\": 1,\r\n        \"name\": \"Todo Noticias\",\r\n        \"code\": \"todo-noticias\"\r\n    },\r\n    \"author\": {\r\n        \"firstName\": \"Carolina\",\r\n        \"lastName\": \"Amoroso\",\r\n        \"fullname\": \"Caro Amoroso\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/article",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"article"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Artículos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Todo Noticias\",\r\n    \"code\": \"todo-noticias\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/article?page=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"article"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Artículo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Todo Noticias\",\r\n    \"code\": \"todo-noticias\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/article/word?page=0&word=mundial",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"article",
+								"word"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "word",
+									"value": "mundial"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Artículo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Las figuritas del Mundial\",\r\n    \"description\": \"Cada paquete se vende a $150!\",\r\n    \"url\": \"https://www.infobae.com/economia/2022/08/26/furor-por-las-figuritas-del-mundial-de-qatar-2022-a-cuanto-llegan-los-insolitos-precios-de-reventa-y-cuanto-piden-por-la-de-messi/\",\r\n    \"urlToImage\": \"https://www.infobae.com/new-resizer/Nu5vLHvgVpI8grPJZuLZfIxAJ-w=/768x432/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/4674VZTXKVFZPFUVF7VCGVPPH4.png\",\r\n    \"publishedAt\": \"2022-08-26\",\r\n    \"content\": \"Los expertos recomiendan tener precauciones ante eventuales estafas al comprarlas a un revendedor. En Panini hablan de “el mito de la figurita difícil”\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/article/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"article",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Artículo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Carolina\",\r\n    \"lastName\": \"Amoroso\",\r\n    \"fullname\": \"Caro Amoroso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/article/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"article",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
